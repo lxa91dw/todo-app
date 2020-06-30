@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Simple JS To-Do</title>
+        <link href="/styles/styles.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="header">
+            <div class="container">
+                <h1 class="header__title">Simple JS To-Do List</h1>
+                <h2 class="header__subtitle">What do you need to do today?</h2>
+            </div>
+        </div>
+        <div class="actions">
+            <div class="actions__container">
+                <input id="search-text" class="input" type="text" placeholder="Enter search criteria">
+                <label class="checkbox"><input id="show-completed" type="checkbox">Show Completed</label>
+            </div>
+        </div>
+        <div class="container">
+            <div id="summary"></div>
+            <div id="todos"></div>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <form id="todo-form">
+                <input type="textbox" class="input" size="50" id="newTodo" placeholder="Enter todo to add">
+                <button id="add-todo" class="button">Add ToDo</button>
+            </form>
+        
+        </div>
+
+        <script src="http://wzrd.in/standalone/uuid%2Fv4@latest"></script>
+        <script src="/scripts/todo-functions.js"></script> 
+        <script src="/scripts/todo-app.js"></script> 
+    </body>
+</html>
