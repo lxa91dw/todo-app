@@ -1,5 +1,20 @@
 'use strict'
- 
+
+// This handles making my todo index
+const newIndex = () => {
+    const index = localStorage.getItem('index')
+
+    if (index) {
+        const nextIndex = Number(index) + 1
+        localStorage.setItem('index', String(nextIndex))
+        return String(nextIndex)
+    } else {
+        localStorage.setItem('index', String(50))
+        return '50'
+
+    }
+}
+
 // our filters set
 const filters = {
     searchText: '',
@@ -8,37 +23,37 @@ const filters = {
 
 // if no todos exist in local storage, use this list...
 let initTodos = [{
-    id: uuidv4(),
+    id: newIndex(),
     text: 'Finish Chapter 7 of JavaScript course',
     completed: false
 },
 {
-    id: uuidv4(),
+    id: newIndex(),
     text: 'Go see Brian about the Trailer for sale',
     completed: false
 },
 {
-    id: uuidv4(),
+    id: newIndex(),
     text: 'Call roofers about leak in roof',
     completed: false
 },
 {
-    id: uuidv4(),
+    id: newIndex(),
     text: 'REACT website for pizza place, scheduler for marina/hair salon',
     completed: false
 },
 {
-    id: uuidv4(),
+    id: newIndex(),
     text: 'Visualize my goals as affirmations',
     completed: false
 },
 {
-    id: uuidv4(),
+    id: newIndex(),
     text: 'Paint the Wine Rack black',
     completed: true
 },
 {
-    id: uuidv4(),
+    id: newIndex(),
     text: 'Clean up phone photos on my phone',
     completed: false
 }
@@ -65,7 +80,7 @@ const getSavedTodos = () => {
 }
 
 const addTodo = (todo, todos) => {
-    todos.push({id: uuidv4(), text: todo, completed: false})
+    todos.push({id: newIndex(), text: todo, completed: false})
     localStorage.setItem('todos', JSON.stringify(todos))
 }
 
